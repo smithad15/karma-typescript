@@ -64,6 +64,7 @@ var Resolver = (function () {
     };
     Resolver.prototype.resolveFilename = function (requiringModule, bundleItem, onFilenameResolved) {
         var bopts = {
+            basedir: __dirname,
             extensions: this.config.bundlerOptions.resolve.extensions,
             filename: bundleItem.isNpmModule() ? undefined : requiringModule,
             moduleDirectory: this.config.bundlerOptions.resolve.directories,

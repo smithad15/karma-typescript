@@ -85,6 +85,7 @@ export class Resolver {
     private resolveFilename(requiringModule: string, bundleItem: BundleItem, onFilenameResolved: { (): void }) {
 
         let bopts = {
+            basedir: __dirname,
             extensions: this.config.bundlerOptions.resolve.extensions,
             filename: bundleItem.isNpmModule() ? undefined : requiringModule,
             moduleDirectory: this.config.bundlerOptions.resolve.directories,
